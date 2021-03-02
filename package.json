@@ -1,0 +1,19 @@
+{
+  "name": "react-fastcampus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhun940731/React-FastCampus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yhun940731/React-FastCampus/issues"
+  },
+  "homepage": "https://github.com/yhun940731/React-FastCampus#readme"
+}

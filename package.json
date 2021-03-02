@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yhun940731/React-FastCampus/issues"
   },
-  "homepage": "https://github.com/yhun940731/React-FastCampus#readme"
+  "homepage": "https://github.com/yhun940731/React-FastCampus#readme",
+  "dependencies": {
+    "prettier": "^2.2.1"
+  }
 }

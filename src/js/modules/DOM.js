@@ -1,7 +1,6 @@
-(function DOM(global, Euid) {
-  'use strict';
+ import Euid from "./Euid/index.js"
 
-  /* -------------------------------------------------------------------------- */
+ /* -------------------------------------------------------------------------- */
   // 의존 모듈 검사
 
   if (!Euid) {
@@ -11,23 +10,25 @@
   /* -------------------------------------------------------------------------- */
 
   // Euid 모듈 멤버 추출
-  var utils = Euid.utils;
+  const utils = Euid.utils;
 
   //  utils 멤버 추출
-  var isString = utils.isString;
-  var isFunction = utils.isFunction;
-  var makeArray = utils.makeArray;
-  var mixins = utils.mixins;
+  const {
+    isString,
+    isFunction,
+    makeArray,
+    mixins,
+  } = utils;
 
   /* -------------------------------------------------------------------------- */
   // 폴리필(Polyfill)
 
   if (!Object.entries) {
-    Object.entries = function (obj) {
+    Object.entries = (obj) => {
       // Object.keys() IE 9+
-      var ownProps = Object.keys(obj);
-      var i = ownProps.length;
-      var resArray = new Array(i);
+      let ownProps = Object.keys(obj);
+      let i = ownProps.length;
+      let resArray = new Array(i);
       while (i--) {
         resArray[i] = [ownProps[i], obj[ownProps[i]]];
       }
@@ -38,27 +39,27 @@
   /* -------------------------------------------------------------------------- */
   // 유틸리티 함수
 
-  var getById = function (idName) {
+  const getById = idName => {
     return document.getElementById(idName);
   };
 
-  var getNode = function (selector, context) {
+  const getNode = (selector, context) => {
     return (context || document).querySelector(selector);
   };
 
-  var getNodeList = function (selector, context) {
+  const getNodeList = (selector, context) => {
     return (context || document).querySelectorAll(selector);
   };
 
   /* -------------------------------------------------------------------------- */
 
   // vNode 생성 유틸리티
-  var createElement = function () {
+  const createElement = (...arg) => {
     // arguments → args 배열 변경
-    var args = makeArray(arguments);
-    var type = args[0];
-    var props = args[1] || {};
-    var children = args.slice(2); // 나머지 인자 집합(배열)
+    const args = makeArray(arg);
+    const type = args[0];
+    const props = args[1] || {};
+    const children = args.slice(2); // 나머지 인자 집합(배열)
 
     props.children = children;
 
@@ -75,17 +76,17 @@
   };
 
   // [비공개] 속성 바인딩 유틸리티
-  var _bindProps = function (element, props) {
+  const _bindProps = (element, propsPram) => {
     // props 복제
-    var props = mixins(props);
+    const props = mixins(propsPram);
 
     // children 속성 제거
     delete props.children;
 
-    var propValues = Object.entries(props);
-    propValues.forEach(function (propValue) {
-      var prop = propValue[0];
-      var value = propValue[1];
+    const propValues = Object.entries(props);
+    propValues.forEach(propValue => {
+      const prop = propValue[0];
+      const value = propValue[1];
 
       // 클래스 속성 설정
       if (prop === 'className') {
@@ -93,8 +94,8 @@
       }
 
       // 이벤트 속성
-      var isEventProp = /^on/.test(prop);
-      var propIsClassName = prop !== 'className';
+      const isEventProp = /^on/.test(prop);
+      const propIsClassName = prop !== 'className';
 
       if (isEventProp && propIsClassName) {
         element.addEventListener(prop.replace(/on/, '').toLowerCase(), value);
@@ -108,7 +109,7 @@
   };
 
   // [비공개] vNode 렌더링 유틸리티
-  var _renderElement = function (vNode) {
+  const _renderElement = vNode => {
     // vNode가 텍스트인 경우
     if (isString(vNode)) {
       return document.createTextNode(vNode);
@@ -116,7 +117,7 @@
 
     // vNode = {type, props}
     // 요소 생성
-    var element = document.createElement(vNode.type);
+    const element = document.createElement(vNode.type);
 
     // 속성 바인딩
     _bindProps(element, vNode.props);
@@ -126,7 +127,7 @@
       // 재귀 호출
       .map(_renderElement)
       // 자식 노드 마운트
-      .forEach(function (childNode) {
+      .forEach(childNode => {
         element.appendChild(childNode);
       });
 
@@ -137,18 +138,17 @@
   /* -------------------------------------------------------------------------- */
 
   // vNode → DOM 노드 마운트(mount)
-  var render = function (vNode, domNode) {
+  const render = (vNode, domNode) => {
     domNode.appendChild(_renderElement(vNode));
   };
 
   /* -------------------------------------------------------------------------- */
   // 모듈 내보내기
 
-  global.DOM = {
+  export default  {
     getById,
     getNode,
     getNodeList,
     createElement,
     render,
   };
-})(window, window.Euid);

@@ -1,0 +1,42 @@
+.checkbox {
+  position: relative;
+  padding-left: 1.3rem;
+
+  input[type='checkbox'] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    background: url('./images/checked=false.svg') no-repeat center / cover;
+  }
+}
+
+.checked {
+  &::before {
+    background-image: url('./images/checked=true.svg');
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: #888;
+  input[type='checkbox'] {
+    cursor: inherit;
+  }
+}
+
+.checkedDisabled {
+  &::before {
+    background-image: url('./images/checked=true-disabled=true.svg');
+  }
+}

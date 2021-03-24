@@ -1,0 +1,40 @@
+$fg: #fff;
+$bg: #0074e9;
+$disabled-fg: #d4e0ed;
+$disabled-bg: #97aabd;
+
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 230px;
+  border-radius: 4px;
+  border: 0;
+  padding: 0.777em 3.055em;
+  text-align: center;
+  font: bold 1.125rem/1.388 'Spoqa Han Sans Neo', 'Noto Sans', Sans-Serif;
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.45));
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background: $bg;
+  color: $fg;
+  &[disabled] {
+    background: $disabled-bg;
+    color: $disabled-fg;
+  }
+}
+
+.secondary {
+  background: $fg;
+  color: $bg;
+  &[disabled] {
+    background: $disabled-fg;
+    color: $disabled-bg;
+  }
+}

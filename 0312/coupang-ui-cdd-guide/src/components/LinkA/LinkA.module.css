@@ -1,0 +1,14 @@
+.link {
+  color: #3c1083;
+  text-decoration: none;
+}
+
+.link:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(88, 37, 176, 0.4)
+}
+
+/* box outline 없애기 */
+.link:focus:not(:focus-visible) {
+  box-shadow: none;
+}

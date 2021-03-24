@@ -1,0 +1,32 @@
+.button {
+  cursor: pointer;
+  min-width: 21.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1em;
+  background-color: #0074E9;
+  border-radius: 0.2rem;
+  border: 0;
+  color: #FFFFFF;
+  box-shadow: 1px 1px 1px 1px #AAA9A9;
+
+  &:focus {
+    outline: none;
+  }
+  &[disabled]  {
+    background-color: #97AABD;
+    color: #D4E0ED;
+    cursor: not-allowed;
+  }
+
+  &.Secondary { 
+    background-color: #FFFFFF;
+    color: #0074E9;
+
+    &[disabled]  {
+      background-color: #DFDFDF;
+      color: #97AABD;
+      cursor: not-allowed;
+    }
+  }
+}

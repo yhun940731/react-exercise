@@ -1,0 +1,19 @@
+.Button_button__1FPlR{cursor:pointer;display:flex;align-items:center;justify-content:center;min-width:230px;border-radius:4px;border:0;padding:.777em 3.055em;text-align:center;font:bold 1.125rem/1.388 "Spoqa Han Sans Neo","Noto Sans",Sans-Serif;-webkit-filter:drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.45));filter:drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.45))}.Button_button__1FPlR[disabled]{cursor:not-allowed}.Button_primary__1GDma{background:#0074e9;color:#fff}.Button_primary__1GDma[disabled]{background:#97aabd;color:#d4e0ed}.Button_secondary__2ZHNZ{background:#fff;color:#0074e9}.Button_secondary__2ZHNZ[disabled]{background:#d4e0ed;color:#97aabd}
+.Checkbox_checkbox__297Cz{position:relative;padding-left:1.3rem}.Checkbox_checkbox__297Cz input[type=checkbox]{cursor:pointer;opacity:0;position:absolute;top:0;left:0}.Checkbox_checkbox__297Cz::before{content:"";position:absolute;top:0;left:0;width:1.1rem;height:1.1rem;background:url(../../static/media/checked=false.7e3e4972.svg) no-repeat center/cover}.Checkbox_checked__142Ad::before{background-image:url(../../static/media/checked=true.c34c57ca.svg)}.Checkbox_disabled__2pW1K{cursor:not-allowed;color:#888}.Checkbox_disabled__2pW1K input[type=checkbox]{cursor:inherit}.Checkbox_checkedDisabled__3ub92::before{background-image:url(../../static/media/checked=true-disabled=true.b2800c74.svg)}
+.Heading_headline__9vkoI{display:inline-flex}
+.LinkA_link__1MHRd {
+  color: #3c1083;
+  text-decoration: none;
+}
+
+.LinkA_link__1MHRd:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(88, 37, 176, 0.4)
+}
+
+/* box outline 없애기 */
+.LinkA_link__1MHRd:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+/*# sourceMappingURL=main.96b0263e.chunk.css.map*/

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "./static/css/main.96b0263e.chunk.css",
+    "main.js": "./main.03308ca27326b9237a6e.bundle.js",
+    "main.css.map": "./static/css/main.96b0263e.chunk.css.map",
+    "main.js.map": "./main.03308ca27326b9237a6e.bundle.js.map",
+    "runtime~main.js": "./runtime~main.03308ca27326b9237a6e.bundle.js",
+    "runtime~main.js.map": "./runtime~main.03308ca27326b9237a6e.bundle.js.map",
+    "vendors~main.js": "./vendors~main.03308ca27326b9237a6e.bundle.js",
+    "vendors~main.js.map": "./vendors~main.03308ca27326b9237a6e.bundle.js.map",
+    "iframe.html": "./iframe.html",
+    "static/media/black.b800108e.svg": "./static/media/black.b800108e.svg",
+    "static/media/Checkbox.module.scss": "./static/media/checked=true.c34c57ca.svg",
+    "static/media/colorful.8ef3dbe2.svg": "./static/media/colorful.8ef3dbe2.svg",
+    "static/media/mono.6c876516.svg": "./static/media/mono.6c876516.svg",
+    "vendors~main.03308ca27326b9237a6e.bundle.js.LICENSE.txt": "./vendors~main.03308ca27326b9237a6e.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.03308ca27326b9237a6e.bundle.js",
+    "vendors~main.03308ca27326b9237a6e.bundle.js",
+    "static/css/main.96b0263e.chunk.css",
+    "main.03308ca27326b9237a6e.bundle.js"
+  ]
+}

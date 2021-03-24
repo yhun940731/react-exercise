@@ -1,0 +1,26 @@
+.vision {
+  position: absolute;
+  z-index: 100;
+  height: 340px;
+  top: 55%;
+  opacity: 0;
+  transform-origin: left bottom;
+  animation: fade-in 1s cubic-bezier(0.25, 0.05, 0.26, 1) 0.2s forwards;
+}
+
+.effect {
+  top: 49%;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    left: 50.7%;
+    transform: scale(0.8) translate(-50%, -40%);
+  }
+  100% {
+    opacity: 0.4;
+    left: 50.7%;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}

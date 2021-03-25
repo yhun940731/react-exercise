@@ -1,0 +1,41 @@
+@use "styles/pages/config.scss" as *;
+
+.headline {
+  display: flex;
+  margin: 0;
+}
+
+.link {
+  margin-top: -0.2em;
+  padding: 0.2em;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+  color: $white;
+  padding: 0.6em 1em;
+  transition: color 0.6s ease;
+
+  span {
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: $red;
+  }
+
+  &:focus {
+    outline: 2px solid $red;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .dot {
+    color: $red;
+    font-size: 52px;
+  }
+}

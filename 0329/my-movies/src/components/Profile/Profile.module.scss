@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: -4px 0 0;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+  transition: all 1s ease;
+  filter: saturate(0.8);
+  &:hover {
+    filter: none;
+  }
+}

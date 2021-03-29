@@ -1,7 +1,12 @@
 import styled from 'styled-components/macro'
 
-// Dialog
-const Dialog = styled.seciton`
+/* -------------------------------------------------------------------------- */
+
+// 컴파운드 컴포넌트 정의
+
+/* -------------------------------------------------------------------------- */
+
+const StyledDialog = styled.section`
   position: fixed;
   z-index: 1000;
   top: 50%;
@@ -10,31 +15,31 @@ const Dialog = styled.seciton`
   min-width: 480px;
   min-height: 480px;
   display: flex;
-  flex-flow: colum;
+  flex-flow: column;
 `
 
-export default Dialog
+export default StyledDialog
 
 /* -------------------------------------------------------------------------- */
 
-Dialog.Modal = styled.div`
+StyledDialog.Modal = styled.div`
   position: fixed;
   z-index: 100;
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
-  background: ${({background}) => background ?? 'rgba(0, 0, 0, 0.6'};
+  background: ${({ background }) => background ?? 'rgba(0, 0, 0, 0.6)'};
 `
 
-Dialog.Header = styled.div`
+StyledDialog.Header = styled.div`
   padding: 1rem;
 `
 
-Dialog.Body = styled.div`
+StyledDialog.Body = styled.div`
   padding: 1rem;
 `
 
-Dialog.Footer = styled.div`
+StyledDialog.Footer = styled.div`
   padding: 1rem;
 `

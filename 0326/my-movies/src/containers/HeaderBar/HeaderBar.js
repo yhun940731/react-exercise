@@ -1,25 +1,18 @@
 import { bar } from './Headerbar.module.scss'
 import { HomeLink, Navigation, Profile } from 'components'
-import { AuthContext } from 'contexts'
+import { withAuth } from 'contexts'
 
 /* -------------------------------------------------------------------------- */
 
-export default function HeaderBar() {
+function HeaderBar({ context }) {
+  const { authUser } = context.state
+
   return (
-    <AuthContext.Consumer>
-      {(context /* value = {state, dispatch} */) => {
-        console.log(context)
-        return (
-          <header className={bar}>
-            <HomeLink />
-            <Navigation>
-              <Profile
-                user={{ name: 'yamoo9', photoURL: 'https://bit.ly/3f91TZy' }}
-              />
-            </Navigation>
-          </header>
-        )
-      }}
-    </AuthContext.Consumer>
+    <header className={bar}>
+      <HomeLink />
+      <Navigation>{authUser && <Profile user={authUser} />}</Navigation>
+    </header>
   )
 }
+
+export default withAuth(HeaderBar)

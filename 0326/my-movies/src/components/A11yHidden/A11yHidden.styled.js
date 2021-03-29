@@ -12,4 +12,5 @@ const A11yHidden = styled.span`
   padding: 0;
   white-space: nowrap;
 `
-export default A11yHidden;
+
+export default A11yHidden

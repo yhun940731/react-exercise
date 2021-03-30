@@ -1,0 +1,39 @@
+@use 'styles/pages/config.scss' as *;
+
+.form {
+  display: flex;
+  flex-flow: column;
+}
+
+.control {
+  margin-bottom: 20px;
+}
+
+.group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.findLink {
+  font-size: 0.9rem;
+  line-height: 1.388;
+  color: $red;
+  text-decoration: none;
+}
+
+.findLinkArrow {
+  margin-left: 6px;
+  vertical-align: -3px;
+  path {
+    stroke: $red;
+  }
+}
+
+.buttonGroup {
+  margin-top: 12px;
+}
+
+.button {
+  width: 100%;
+}

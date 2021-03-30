@@ -1,0 +1,20 @@
+@use 'styles/pages/config.scss' as *;
+
+.iconInput {
+  display: inline-flex;
+  flex-direction: column;
+  border: 1px solid $gray;
+
+  &Error {
+    border: 0;
+  }
+
+  input:focus {
+    outline: none;
+    background: lighten($black, 10%);
+
+    &::selection {
+      background: lighten($black, 30%);
+    }
+  }
+}

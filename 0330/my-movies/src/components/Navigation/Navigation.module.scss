@@ -1,0 +1,130 @@
+@use 'styles/pages/config.scss' as *;
+
+@mixin button() {
+  border: 0;
+  padding: 1rem;
+  background: transparent;
+  color: $white;
+
+  &:focus {
+    outline: none;
+    border-radius: 1px;
+    box-shadow: 0 0 0 2px rgba($red, 0.8);
+    color: $red;
+
+    &:not(:focus-visible) {
+      box-shadow: none;
+      color: $white;
+    }
+  }
+
+  svg {
+    pointer-events: none;
+  }
+}
+
+.menuOpenButton {
+  @include button;
+}
+
+.menuCloseButton {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  @include button;
+}
+
+.mobileOnly {
+  @media (min-width: 48em /* 768px */) {
+    display: none;
+  }
+}
+
+.container {
+  display: flex;
+
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  .active {
+    color: $red;
+    &:hover,
+    &:focus {
+      color: $red;
+    }
+  }
+}
+
+.ltMd {
+  display: flex;
+  flex-flow: column;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+
+  ul {
+    margin-top: 45px;
+    padding: 0 2em;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: $gray;
+    padding: 0.5em 0;
+    font-size: 1.7em;
+  }
+
+  // figure
+  ul + *:not(button) {
+    order: -1;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 2em;
+    border-bottom: 1px solid rgba($gray, 0.3);
+    transform: scale(1.45);
+  }
+}
+
+.gteMd {
+  ul {
+    display: inline-flex;
+    margin: 10px 30px 10px 60px;
+  }
+
+  .removeSpaceR {
+    margin-right: 0;
+  }
+
+  a {
+    padding: 0.8em 1.3em;
+    text-decoration: none;
+    font-size: 18px;
+    color: $gray;
+    transition: color 0.6s ease-out;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+    &:focus {
+      outline: 2px solid $red;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+}

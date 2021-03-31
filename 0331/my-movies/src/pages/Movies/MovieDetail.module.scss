@@ -1,0 +1,88 @@
+@use 'styles/pages/config.scss' as *;
+
+.container {
+  max-width: 1024px;
+  margin: 200px auto 100px;
+  padding: 1rem 2rem;
+}
+
+.videoTrailer {
+  position: fixed;
+  z-index: -10;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2000px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+}
+
+$shadow: 0 3px 4px rgba(0, 0, 0, 0.7);
+
+.poster {
+  box-shadow: $shadow;
+  height: 330px;
+  width: auto;
+}
+
+.headline {
+  text-shadow: $shadow;
+}
+
+.title {
+  display: inline-flex;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  margin-right: 5px;
+  font-size: 32px;
+}
+
+.tagline {
+  margin-top: 10px;
+  margin-bottom: 3rem;
+  font-size: 18px;
+}
+
+.overview {
+  margin-top: 3rem;
+  line-height: 1.7;
+  font-size: 20px;
+  text-shadow: $shadow;
+}
+
+.button {
+  color: $red;
+}
+
+.mobileOnly {
+  margin-top: 120px;
+  margin-bottom: 0;
+
+  .poster {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .title {
+    margin-top: 2rem;
+    font-size: 26px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .overview {
+    font-size: 17px;
+  }
+}

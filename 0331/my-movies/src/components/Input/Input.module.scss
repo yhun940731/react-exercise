@@ -1,0 +1,87 @@
+@use 'styles/pages/config.scss' as *;
+
+.formControl {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  position: relative;
+  display: inline-flex;
+  min-width: 296px;
+}
+
+.inputWrapperError {
+  position: relative;
+  border: 1px solid $red;
+}
+
+.input {
+  flex: 1;
+  border: 0;
+  padding: 0.875em;
+  font: 500 1rem/1.375 'Noto Sans';
+  background: $black;
+  color: $white;
+
+  &::placeholder {
+    color: lighten($gray, 60%);
+  }
+
+  &:read-only {
+    color: $gray;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $gray;
+  }
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: $black;
+  font-size: 13px;
+  // 접근성 감춤 설정
+  &Hidden {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    clip-path: circle(0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $red;
+    &:not(:focus-visible) {
+      box-shadow: none;
+    }
+  }
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+.error {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 15px;
+  color: $red;
+}

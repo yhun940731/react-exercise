@@ -1,0 +1,68 @@
+@use 'styles/pages/config.scss' as *;
+
+@mixin focusable() {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($red, 0.8);
+    &:not(:focus-visible) {
+      box-shadow: none;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 10000;
+  top: 50%;
+  left: 50%;
+  min-width: 90vw;
+  min-height: 40vh;
+  border: 1px solid rgba($gray, 0.55);
+  background: rgba(#0f0f0f, 0.8);
+  backdrop-filter: blur(2px);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  border-radius: 4px;
+  @include focusable();
+
+  @media (min-width: 768px) {
+    min-width: 480px;
+    min-height: 300px;
+  }
+}
+
+.dim {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(#000, 0.4);
+}
+
+.header {
+  padding: 1rem;
+}
+
+.body {
+  flex: 1;
+  padding: 1rem;
+}
+
+.footer {
+  padding: 1rem;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 0;
+  background: transparent;
+  color: $white;
+
+  @include focusable();
+}

@@ -1,0 +1,52 @@
+@use 'styles/pages/config.scss' as *;
+
+$fg: $white;
+$bg: darken($red, 10%);
+$disabled-fg: darken($fg, 30%);
+$disabled-bg: darken($red, 30%);
+
+.button {
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 230px;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.777em 3.055em;
+  text-align: center;
+  text-decoration: none;
+  font: bold 1.125rem/1.388 'Spoqa Han Sans Neo', 'Noto Sans', Sans-Serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba($red, 0.5);
+    &:not(:focus-visible) {
+      box-shadow: none;
+    }
+  }
+}
+
+.primary {
+  background: $bg;
+  color: $fg;
+  &[disabled] {
+    background: $disabled-bg;
+    color: $disabled-fg;
+  }
+}
+
+.secondary {
+  background: $fg;
+  color: $bg;
+  &[disabled] {
+    background: $disabled-fg;
+    color: $disabled-bg;
+  }
+}

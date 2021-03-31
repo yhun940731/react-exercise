@@ -1,0 +1,42 @@
+@use './config' as *;
+
+/* -------------------------------------------------------------------------- */
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+img::selection {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  height: 1px;
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 2px;
+  background: #242424;
+
+  &:hover {
+    background: $red;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* -------------------------------------------------------------------------- */
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font: 1rem/1.5 'Spoqa Han Sans Neo', sans-serif;
+  background: $black;
+  color: $white;
+}
